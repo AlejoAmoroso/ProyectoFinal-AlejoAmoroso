@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UnicoinWallet</title>
+        <!-- Bootstrap -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+                crossorigin="anonymous" />
+        <!-- CSS -->
+        <link rel="stylesheet" href="./styles/styles.css" />
+        <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+        <!-- Google fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@100;200;300;400;500;600;700&family=Open+Sans&display=swap"
+                rel="stylesheet" />
+        <!-- FontsAwesome -->
+        <script src="https://kit.fontawesome.com/a645419f69.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+        <header id="header">
+                <div class="container-fluid header-top-color">
+                        <div class="header-top">
+                                <a href="#" class="header-top-left">
+                                        <img src="../../assets/logo-top.png" alt="logo" class="header-top-icon" />
+                                </a>
+                        </div>
+                </div>
+                <div class="header-bottom">
+                        <nav class="navbar navbar-expand-lg fixed-top">
+                                <div class="container">
+                                        <a href="#" class="navbar-brand">
+                                                <img src="/assets/logo.png" alt="logo" width="45" height="45"
+                                                        class="nav-bottom-logo d-inline-block align-text-center" />UnicoinWallet
+                                        </a>
+                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#navbarSupportedContent"
+                                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                                aria-label="Toggle navigation">
+                                                <span class="navbar-toggler-icon"></span>
+                                        </button>
+                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                                <ul class="navbar-nav">
+                                                        <li class="nav-item">
+                                                                <a href="#" class="nav-link">Home</a>
+                                                        </li>
+                                                        <li class="nav-item dropdown">
+                                                                <a class="nav-link dropdown-toggle" href="#"
+                                                                        role="button" data-bs-toggle="dropdown"
+                                                                        aria-expanded="false">¿Qué quieres hacer?</a>
+                                                                <ul class="dropdown-menu">
+                                                                        <li>
+                                                                                <a href="/pages/retirar.html"
+                                                                                        class="dropdown-item">Retirar
+                                                                                        dinero</a>
+                                                                        </li>
+                                                                        <li>
+                                                                                <a href="/pages/agregar.html"
+                                                                                        class="dropdown-item">Agregar
+                                                                                        dinero</a>
+                                                                        </li>
+                                                                </ul>
+                                                        </li>
+                                                </ul>
+                                                <div class="nav-left m-auto">
+                                                        <div class="user"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </nav>
+                </div>
+        </header>
+        <main>
+                <section id="home-main">
+                        <div class="home-background"></div>
+                        <div class="container mt-5">
+                                <span class="home-title">Balances</span>
+                                <div class="home-card">
+                                        <img src="./assets/logo-top.png" alt="logo" class="home-balances-img" />
+                                        <div class="home-balances-container__container">
+                                                <div class="card-amounts">
+                                                        <h5 class="card-amounts__h5">Unicoin</h5>
+                                                        <span class="font-big" id="err">$<span id="homeBalancesMonto"
+                                                                        class="card-amounts__span font-big"></span><span
+                                                                        class="card-amounts__span"> UniUSD</span></span>
+                                                        <span class="card-amounts__span gray px-2" id="err2">$<span
+                                                                        id="homeBalancesMontoConversion"
+                                                                        class="card-amounts__span gray"></span></span>
+                                                </div>
+                                                <div class="card-actions">
+                                                        <a href="./pages/agregar.html"
+                                                                class="btn btn-primary card-actions__button">Agregar</a>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="container mt-5">
+                                <span class="home-title">Cuenta</span>
+                                <div class="home-card">
+                                        <img src="./assets/accounts-logo.png" alt="" class="home-balances-img">
+                                        <div class="home-balances-container__container">
+                                                <div class="card-amounts">
+                                                        <h5 class="card-amounts__h5" id="homeAccountName"></h5>
+                                                        <span class="card-amounts__span font-big"
+                                                                id="homeAccountTransactionNumber"></span>
+                                                        <span class="card-amounts__span gray">Transacciones
+                                                                realizadas</span>
+                                                </div>
+                                                <div class="card-actions">
+                                                        <button class="btn btn-primary card-actions__button" id="logoutBtn">Cerrar sesión</button>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+                        <div class="container mt-5">
+                                <span class="home-title">Monedas</span>
+                                <!-- Agregar algun tipo de tabla o grafico con chart.js -->
+                                <table class="cointable">
+                                        <thead class="cointable__thead">
+                                                <th>
+                                                        <div class="table-heading">
+                                                                <span>Moneda</span>
+                                                        </div>
+                                                </th>
+                                                <th>
+                                                        <div class="table-heading">
+                                                                <span>Precio</span>
+                                                        </div>
+                                                </th>
+                                                <th>
+                                                        <div class="table-heading">
+                                                                <span>Fecha</span>
+                                                        </div>
+                                                </th>
+                                        </thead>
+                                        <tbody id="cointable__tbody">
+                                                
+                                        </tbody>
+                                </table>
+                </section>
+
+                <section class="promo"> 
+                        <!-- Agregar cards con promos o mas cosas -->
+                </section>
+        </main>
+        <footer class="container footer">
+                <div class="h-100 d-flex flex-column flex-sm-row justify-content-center justify-content-sm-between align-items-start align-items-sm-center">
+                        <p class="copyright">© Unicoin, Inc. 2023 - v12.43.10</p>
+                </div>
+        </footer>
+        <!-- Boostrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+                crossorigin="anonymous"></script>
+        <!-- JS -->
+        <script src="./javascript/home.js"></script>
+</body>
+
+</html>
